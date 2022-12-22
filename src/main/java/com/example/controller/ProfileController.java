@@ -1,19 +1,41 @@
 package com.example.controller;
 
 import com.example.dto.entityDto.ProfileDto;
+import com.example.enums.Language;
 import com.example.service.ProfileService;
+import com.example.service.ResourceBundleService;
+import com.example.util.SpringSecurityUtil;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/profile")
 public class ProfileController {
     @Autowired
     private ProfileService profileService;
-    public ResponseEntity<?> create (ProfileDto dto){
 
-        return null;
+    @Autowired
+    private SpringSecurityUtil details;
+    @Autowired
+    private ResourceBundleService resourceBundleService;
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/create_user")
+    public ResponseEntity<?> create (@RequestBody @Valid ProfileDto dto,
+                                     @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language){
+        ProfileDto profileDto = profileService.create(dto , language);
+        return ResponseEntity.ok(profileDto);
     }
+
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @PutMapping("/update_user")
+    public ResponseEntity<?> update(@RequestBody ProfileDto dto ,
+                                    @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language){
+        ProfileDto update = profileService.update(dto);
+        return ResponseEntity.ok(update);
+    }
+
 }

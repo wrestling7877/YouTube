@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import com.example.enums.ProfileRole;
+import com.example.enums.ProfileStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
@@ -20,7 +21,6 @@ public class ProfileEntity {
     @Column
     private String surname;
 
-    @Column(unique = true)
     private String email;
 
 
@@ -40,6 +40,11 @@ public class ProfileEntity {
     @Column
     @Enumerated(EnumType.STRING)
     private ProfileRole role;
+
+    @Column
+    private ProfileStatus status;
+    @Column
+    private Boolean visible;
 
 
 
