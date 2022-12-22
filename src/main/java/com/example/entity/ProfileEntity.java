@@ -20,8 +20,13 @@ public class ProfileEntity {
     @Column
     private String surname;
 
-    @Email
+    @Column(unique = true)
     private String email;
+
+
+    @Column(unique = true)
+    private String username;
+
 
     @Column
     private String password;
