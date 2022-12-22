@@ -21,7 +21,6 @@ public class AttachEntity {
     @Column
     private String originalName;
 
-    @Size(min = 1)
     private Long size;
     @Column
     private String extension;
