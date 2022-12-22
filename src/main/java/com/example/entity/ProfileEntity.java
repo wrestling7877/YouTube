@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import com.example.enums.ProfileRole;
+import com.example.enums.ProfileStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
@@ -8,7 +9,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "profile")
+@Entity
+@Table(name = "profile")
 public class ProfileEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +26,6 @@ public class ProfileEntity {
     private String email;
 
 
-    @Column(unique = true)
-    private String username;
 
 
     @Column
@@ -42,6 +42,9 @@ public class ProfileEntity {
     private ProfileRole role;
 
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private ProfileStatus profileStatus;
 
 }
 

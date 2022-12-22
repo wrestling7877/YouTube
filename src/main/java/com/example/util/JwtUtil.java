@@ -22,7 +22,7 @@ public class JwtUtil {
         jwtBuilder.claim("email", profileEmail); // for input key value
         jwtBuilder.claim("role", role);    // for input key value
         jwtBuilder.setExpiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
-        jwtBuilder.setIssuer("Kun.uz"); // created by
+        jwtBuilder.setIssuer("YouTube.com"); // created by
 
         return jwtBuilder.compact(); // to return token
     }
@@ -36,7 +36,7 @@ public class JwtUtil {
 
         jwtBuilder.claim("id", profileId); // for input key value
         jwtBuilder.setExpiration(new Date(System.currentTimeMillis() + (1000 * 3600 * 1)));
-        jwtBuilder.setIssuer("Kun.uz"); // created by
+        jwtBuilder.setIssuer("YouTube.com"); // created by
 
         return jwtBuilder.compact(); // to return token
     }
@@ -53,11 +53,11 @@ public class JwtUtil {
 
         Integer id = (Integer) claims.get("id");
         String role = (String) claims.get("role");
-        String username = (String) claims.get("username");
+        String email = (String) claims.get("email");
 
         ProfileRole profileRole = ProfileRole.valueOf(role);
 
-        return new JwtDto(id, profileRole, username);
+        return new JwtDto(id, profileRole, email);
 
 
     }
