@@ -43,8 +43,8 @@ public class JwtFilter extends OncePerRequestFilter {
             final String token = header.substring(7).trim();
             JwtDto jwtDTO = JwtUtil.decode(token);
 
-            String userName = jwtDTO.getEmail();
-            UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
+            String email = jwtDTO.getEmail();
+            UserDetails userDetails = userDetailsService.loadUserByUsername(email);
 
             UsernamePasswordAuthenticationToken
                     authentication = new UsernamePasswordAuthenticationToken(userDetails,
@@ -52,7 +52,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(authentication);
-
+            filterChain.doFilter(request, response);
         } catch (JwtException | UsernameNotFoundException e) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setHeader("Message", "Token not valid mazgi");
