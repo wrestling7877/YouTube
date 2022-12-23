@@ -15,20 +15,20 @@ import java.util.UUID;
 public class AttachEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private String id;
 
-    @Column
+    @Column(name = "original_name")
     private String originalName;
 
+    @Column
+    private String path;
+
+    @Column
     private Long size;
+
     @Column
     private String extension;
 
     @Column
-    private String path;
-    @Column
-    private String duration;
-
-
+    private Long duration;
 }

@@ -14,28 +14,28 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/profile")
 public class ProfileController {
-    @Autowired
-    private ProfileService profileService;
-
-    @Autowired
-    private SpringSecurityUtil details;
-    @Autowired
-    private ResourceBundleService resourceBundleService;
-
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/create_user")
-    public ResponseEntity<?> create (@RequestBody @Valid ProfileDto dto,
-                                     @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language){
-        ProfileDto profileDto = profileService.create(dto , language);
-        return ResponseEntity.ok(profileDto);
-    }
-
-    @PreAuthorize("hasRole('ROLE_USER')")
-    @PutMapping("/update_user")
-    public ResponseEntity<?> update(@RequestBody ProfileDto dto ,
-                                    @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language){
-        ProfileDto update = profileService.update(dto);
-        return ResponseEntity.ok(update);
-    }
+//    @Autowired
+//    private ProfileService profileService;
+//
+//    @Autowired
+//    private SpringSecurityUtil details;
+//    @Autowired
+//    private ResourceBundleService resourceBundleService;
+//
+//    @PreAuthorize("hasRole('ADMIN')")
+//    @PostMapping("/create_user")
+//    public ResponseEntity<?> create (@RequestBody @Valid ProfileDto dto,
+//                                     @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language){
+//        ProfileDto profileDto = profileService.create(dto , language);
+//        return ResponseEntity.ok(profileDto);
+//    }
+//
+//    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PutMapping("/update_user")
+//    public ResponseEntity<?> update(@RequestBody ProfileDto dto ,
+//                                    @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language){
+//        ProfileDto update = profileService.update(dto);
+//        return ResponseEntity.ok(update);
+//    }
 
 }

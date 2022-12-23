@@ -21,6 +21,7 @@ public class ProfileEntity {
     @Column
     private String surname;
 
+    @Column
     private String email;
 
 
@@ -41,7 +42,9 @@ public class ProfileEntity {
     @Enumerated(EnumType.STRING)
     private ProfileRole role;
 
-    @Column
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+
     private ProfileStatus status;
     @Column
     private Boolean visible;
