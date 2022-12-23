@@ -41,17 +41,7 @@ public class AuthController {
         return ResponseEntity.ok(responseDto);
     }
 
-//    @Operation(summary = "Method for Registration", description = "This method used for registration")
-//    @PostMapping("/register")
-//    public ResponseEntity<?> register(@RequestParam("name") String name,
-//                                      @RequestParam("surname") String surname,
-//                                      @RequestParam("email") String email,
-//                                      @RequestParam("phone") String phone,
-//                                      @RequestParam("password") String password) {
-//
-//        String result = authService.register(name, surname, email, phone, password);
-//        return ResponseEntity.ok(result);
-//    }
+
 
     @Operation(summary = "Method for Registration", description = "This method used for registration")
     @PostMapping("/register")

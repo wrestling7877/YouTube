@@ -11,15 +11,12 @@ public class RegisterDto {
 
     @NotBlank
     private String name;
-
-
     @NotBlank
     private String surname;
-
-
     @Email
     private String email;
 
+    private String photoId;
 
     @NotBlank
     private String password;
