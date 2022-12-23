@@ -1,0 +1,8 @@
+###
+POST http://localhost:8080/profile/create_user
+Accept-Language
+Content-Type: application/json
+
+{
+  "role":"ROLE_USER"
+}

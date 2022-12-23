@@ -11,14 +11,14 @@ public class JwtDto {
 
     private ProfileRole role;
 
-    private String username;
+    private String email;
 
 
 
-    public JwtDto(Integer id, ProfileRole role, String username) {
+    public JwtDto(Integer id, ProfileRole role, String email) {
         this.id = id;
         this.role = role;
-        this.username = username;
+        this.email = this.email;
     }
 
 

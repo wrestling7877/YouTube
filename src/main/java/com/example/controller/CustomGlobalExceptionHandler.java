@@ -14,7 +14,6 @@ import java.util.*;
 
 @ControllerAdvice
 @Tag(name = "CustomGlobalExceptionHandler API", description = "Api list for CustomGlobalExceptionHandler")
-
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override

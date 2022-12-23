@@ -3,7 +3,6 @@ package com.example.entity;
 import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,10 +22,6 @@ public class ProfileEntity {
 
     @Column
     private String email;
-
-
-    @Column(unique = true)
-    private String username;
 
 
     @Column

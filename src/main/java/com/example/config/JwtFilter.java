@@ -34,7 +34,7 @@ public class JwtFilter extends OncePerRequestFilter {
         final String header = request.getHeader("Authorization");
         if (header == null || !header.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+
             response.setHeader("Message", "Where is token mazgi");
             return;
         }
@@ -43,7 +43,7 @@ public class JwtFilter extends OncePerRequestFilter {
             final String token = header.substring(7).trim();
             JwtDto jwtDTO = JwtUtil.decode(token);
 
-            String userName = jwtDTO.getUsername();
+            String userName = jwtDTO.getEmail();
             UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
 
             UsernamePasswordAuthenticationToken
