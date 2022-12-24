@@ -1,0 +1,12 @@
+###
+POST http://localhost:8080/attach/upload
+
+
+###
+GET http://localhost:8080/attach/download/49521bf3-fb14-41c4-8ca0-4a113fb29072
+
+
+
+###
+DELETE http://localhost:8080/attach/admin/49521bf3-fb14-41c4-8ca0-4a113fb29072
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE4NzM3MzgsImlkIjo1LCJlbWFpbCI6IndyZXN0bGluZzc4NzdAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJleHAiOjE2NzE5NjAxMzgsImlzcyI6IllvdVR1YmUifQ.pr0XiQ7zy022J_PJr9dmX05JhxCDkSfBjObS5u2Gx_sCN3J7JjGv4_rKHo-cbpRxhqN65eQzwRg8Q6paVAv05g
