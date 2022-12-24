@@ -1,0 +1,2 @@
+insert into channel(id,banner_id,photo_id,profile_id,status,name)
+values('b12584a2-a142-473e-be71-d44c2b1ec265','5b78e922-ae84-4ca0-b7b7-615e5e7c586d','5b78e922-ae84-4ca0-b7b7-615e5e7c586d',5,'ACTIVE','wrestling_7877');
