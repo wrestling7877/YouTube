@@ -1,8 +1,10 @@
-###
-POST http://localhost:8080/profile/create_user
-Accept-Language
-Content-Type: application/json
+POST localhost:8080/profile/create_user
+Content-Type:application/json
+Accept-Language: RU
 
 {
-  "role":"ROLE_USER"
+  "name" : "Kamoliddin",
+  "surname" : "Abdugafarov",
+  "email" : "kamolabdugafarovv@gmail.com",
+  "password" :"30102002"
 }

@@ -38,7 +38,6 @@ public class JwtFilter extends OncePerRequestFilter {
             response.setHeader("Message", "Where is token mazgi");
             return;
         }
-
         try {
             final String token = header.substring(7).trim();
             JwtDto jwtDTO = JwtUtil.decode(token);

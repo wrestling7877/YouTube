@@ -26,4 +26,5 @@ public class ProfileDto {
 
     private ProfileRole role;
 
+    private Boolean visible;
 }

@@ -66,8 +66,8 @@ public class SecurityConfig {
         // authorization  murojat qilayotgan userni dostupi bormi?
 
         http.csrf().disable().cors().disable().authorizeHttpRequests()
-                //.requestMatchers("/user/**").hasAnyRole("USER","ADMIN") //you must log in and become a user OR an admin
-                   .requestMatchers("/profile/**").permitAll()//you must log in and become a user
+                .requestMatchers("/profile/user/**").permitAll()   //you must log in and become a user OR an admin
+                //   .requestMatchers("/profile/admin/*").hasRole("ADMIN") //you must log in and become a user
                 //  .requestMatchers("/attach/admin/*").hasRole("ADMIN")//you must log in and become an admin
                 .requestMatchers("/attach/**").permitAll()/// you don't have to do log In and  this way is open for everyone
                 .requestMatchers(AUTH_WHITELIST).permitAll()
