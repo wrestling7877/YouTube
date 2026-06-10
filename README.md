@@ -1,18 +1,25 @@
 # YouTube Backend API
 
-A Spring Boot backend application for a YouTube-like video platform.
+A Spring Boot REST API inspired by the YouTube platform.
+
+This project provides backend services for user authentication, channel management, video publishing, categories, tags, video interactions, and file uploads.
 
 ## Features
 
-* User Authentication with JWT
-* Profile Management
-* Video Management
-* Channel Management
-* Category Management
-* Attachment Management
+* JWT Authentication & Authorization
+* User Registration and Login
 * Email Verification
+* Profile Management
+* Channel Management
+* Video Management
+* Category Management
+* Tag Management
+* Video Like System
+* Video View Counter
+* File Upload & Attachment Management
 * Global Exception Handling
-* Database Migration with Flyway
+* Validation
+* Swagger API Documentation
 
 ## Tech Stack
 
@@ -20,12 +27,12 @@ A Spring Boot backend application for a YouTube-like video platform.
 * Spring Boot 3
 * Spring Security
 * Spring Data JPA
-* JWT
 * PostgreSQL
-* Flyway
+* JWT
 * Lombok
 * Maven
 * Swagger / OpenAPI
+* Java Mail Sender
 
 ## Project Structure
 
@@ -35,17 +42,78 @@ src/main/java/com/example
 ├── controller
 ├── dto
 ├── entity
-├── enums
 ├── repository
 ├── service
-└── util
+├── util
+└── exception
 ```
+
+## Main Modules
+
+### Authentication
+
+* Registration
+* Login
+* JWT Token Generation
+* Email Verification
+
+### Profile
+
+* Create Profile
+* Update Profile
+* Profile Management
+
+### Channel
+
+* Create Channel
+* Update Channel
+* Delete Channel
+
+### Video
+
+* Upload Video
+* Update Video
+* Delete Video
+* Video Listing
+* Video Details
+
+### Category
+
+* Create Category
+* Update Category
+* Delete Category
+
+### Tag
+
+* Create Tag
+* Update Tag
+* Delete Tag
+
+### Video Interaction
+
+* Video Likes
+* Video Views Counter
+
+### Attachment
+
+* Upload Files
+* Download Files
+* Manage Attachments
 
 ## Database
 
 PostgreSQL is used as the primary database.
 
-Database migrations are managed with Flyway.
+The application stores:
+
+* Profiles
+* Channels
+* Videos
+* Categories
+* Tags
+* Video Likes
+* Video Views
+* Attachments
 
 ## How to Run
 
@@ -61,7 +129,7 @@ cd YouTube
 Update `application.properties`:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/database_name
+spring.datasource.url=jdbc:postgresql://localhost:5432/youtube_db
 spring.datasource.username=postgres
 spring.datasource.password=password
 ```
@@ -80,6 +148,15 @@ Swagger UI:
 http://localhost:8080/swagger-ui/index.html
 ```
 
+## Future Improvements
+
+* Video Comments
+* Playlist Management
+* Subscription System
+* Recommendation Engine
+* Redis Caching
+* Docker Support
+
 ## Author
 
 **Bekzod**
@@ -91,9 +168,7 @@ Technologies:
 * Spring Boot
 * PostgreSQL
 * JWT
-* Flyway
 * Spring Security
 * REST API Development
-
-```
-```
+* JPA / Hibernate
+* Swagger
