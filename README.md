@@ -178,7 +178,7 @@ src/
 ### Step 1. リポジトリを取得
 
 ```bash
-git clone <リポジトリURL>
+git clone https://github.com/wrestling7877/YouTube.git
 cd YouTube
 ```
 
